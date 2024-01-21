@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add|Update Items</title>
+</head>
+<body>
+{% extends "basic.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="/additems">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"> Enter items details</legend>
+                <div class="form-group">
+                    {{ form.barcode.label() }}
+                    {{ form.barcode(class="form-control form-control-lg") }}
+                </div>
+                <br>
+                <div>
+                    {{ form.brand_name.label() }} {{form.brand_name() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.product_name.label() }} {{form.product_name() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.size.label() }} {{form.size() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.available_units.label() }} {{form.available_units() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.MRP.label() }} {{form.MRP() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.buying_price.label() }} {{form.buying_price() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.selling_price.label() }} {{form.selling_price() }}
+                </div>
+                <br>
+                <div>
+                    {{ form.buying_from.label() }} {{form.buying_from() }}
+                </div>
+
+                <br>
+                <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+                </div>
+            </fieldset>
+        </form>
+    </div>
+{% endblock content %}
+</body>
+</html>
